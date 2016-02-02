@@ -11,4 +11,8 @@ export_env_dir $env_dir
 cd $build_dir
 
 head "Building webpack bundle"
+rm -rf node_modules/
+npm install
 $(npm bin)/webpack --profile --display-modules
+rm -rf node_modules/
+npm install --production
